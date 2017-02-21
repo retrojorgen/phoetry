@@ -1,0 +1,22 @@
+html  
+  head
+
+    base(href="/")
+    title= title
+    meta(name="viewport",content="width=device-width, initial-scale=1.0")
+    link(href="https://fonts.googleapis.com/css?family=Pacifico",rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Libre+Franklin",rel="stylesheet")
+
+    script(src="/public/bower_components/angular/angular.js")
+    script(src="/public/bower_components/angular-route/angular-route.js")
+    link(href="/assets/css/avisretur.css",rel="stylesheet")
+
+  body(ng-app="Avisretur")
+    
+    ng-view
+
+
+
+
+    script(src="/assets/scripts/js/app.js")
+    script(src="/assets/scripts/js/controllers/pageController.js")

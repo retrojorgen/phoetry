@@ -1,0 +1,68 @@
+<div id="selected-phoetry" ng-if="pa.selectedVideo">
+	<h4>Phoetry</h4>
+	<h1>"{{pa.selectedVideo.completePhrase}}"</h1>
+	<ul class="video-details">
+		<li class="detail page">
+			<a ng-href="{{window.location.href}}" class="mobile-label">Phoetry url</a> <a ng-href="{{window.location.href}}">{{pa.currentUrl}}</a>
+		</li>
+		<li class="detail page">
+			<a ng-href="{{pa.selectedVideo.videoUrl}}" class="mobile-label">mp4 video</a> <a ng-href="{{pa.selectedVideo.videoUrl}}">{{pa.videoUrlRoot}}/{{pa.selectedVideo.videoUrl}}</a>
+		</li>
+		<li class="detail page">
+			<a ng-href="{{pa.selectedVideo.gifUrl}}" class="mobile-label">gif</a> <a ng-href="{{pa.selectedVideo.gifUrl}}">{{pa.videoUrlRoot}}/{{pa.selectedVideo.gifUrl}}</a>
+		</li>
+		<li class="detail link">
+			<a ng-href="/api/get/animation/{{pa.selectedVideo.id}}" class="mobile-label">api</a> <a ng-href="/api/get/animation/{{pa.selectedVideo.id}}">{{pa.videoUrlRoot}}/api/get/animation/{{pa.selectedVideo.id}}</a>
+		</li>
+	</ul>
+	<div class="video-wrapper">
+		<video width="150" height="150" autoplay muted loop ng-cloak>
+			<source ng-src="{{pa.selectedVideo.videoUrl}}" type="video/mp4" ng-cloak>
+		</video>
+	</div>
+</div>
+
+<div id="main-input">
+	<h2>Create new phoetry</h2>	
+	<div class="add-new-container">
+		<form ng-submit="pa.makePhoetry()">
+			<input ng-model="pa.input.newSearchPhrase" placeholder="Ex. DonaldTrump sucks">
+			<button type="submit" class="add-new-button">Make</button>
+		</form>
+	</div>
+</div>
+
+<div class="loading" ng-class="{visible: pa.input.loading}">
+	<div class="loading-inner">
+		Loading..
+	</div>
+</div>
+
+<div id="latest-videos">
+	<h2>Latest phoetry</h2>
+	<ul class="latest-videos-wrapper">
+		<li ng-repeat="phoVideo in pa.latestVideos" class="latest-videos-container">
+			<a ng-href="/animation/{{phoVideo.id}}">
+				<h3>"{{phoVideo.completePhrase}}"</h3>
+			</a>
+			<a ng-href="/animation/{{phoVideo.id}}">
+				<div class="video-wrapper">
+					<video width="100" height="100" autoplay muted loop ng-cloak>''
+						<source ng-src="{{phoVideo.videoUrl}}" type="video/mp4" ng-cloak>
+					</video>
+				</div>
+			</a>
+			<ul class="video-details">
+				<li class="detail page">
+					{{phoVideo.videoUrl}}
+				</li>
+				<li class="detail link">
+					{{phoVideo.videoUrl}}
+				</li>
+				<li class="detail api">
+					{{phoVideo.videoUrl}}
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>

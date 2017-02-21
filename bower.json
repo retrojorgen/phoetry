@@ -1,0 +1,14 @@
+{
+  "name": "phoetry",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jørgen Jacobsen <jorgen.jacobsen@di.no>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/retrojorgen/phoetry",
+  "dependencies": {
+    "angular": "1.6.1",
+    "angular-route": "^1.6.1"
+  }
+}

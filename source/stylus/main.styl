@@ -1,0 +1,196 @@
+@import 'variables.styl'
+@import 'buttons.styl'
+
+html,
+body
+	margin: 0
+	padding: 0
+	background: $dark-brown-background
+	color: $white
+	font-family: $libreFranklin
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+a
+	text-decoration: none
+	cursor: pointer
+	color: $white
+
+#latest-videos
+	padding: 60px 40px
+	@media $mobile
+		padding: 20px 10px
+	h2
+		text-align: center	
+
+
+.loading
+	position: fixed
+	width: 100vw
+	height: 100vh
+	left: 0
+	top: 0
+	display: flex
+	align-items: center
+	justify-content: center
+	display: none
+	&.visible
+		display: flex
+	.loading-inner
+		width: 100px
+		height: 100px
+		background-color: $yellow
+		color: $black
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: 50%
+		animation: pulse 1s linear infinite
+		
+
+
+
+.latest-videos-wrapper
+	list-style: none
+	padding: 0
+	margin: 0
+	display: flex
+	justify-content: space-between
+	flex-direction: row
+	flex-wrap: wrap
+
+
+.latest-videos-container
+	width: 18%
+	display: flex
+	justify-content: center
+	align-items: center
+	margin-bottom: 10px
+	flex-direction: column
+	@media $mobile
+		width: 48%
+
+.video-wrapper
+	width: 100px
+	height: 100px
+	border: 10px solid darken($dark-brown-background, 20%)	
+
+.add-new-container
+	form
+		display: flex
+		border-radius: 4px
+		overflow: hidden
+		flex-direction: row
+		@media $mobile
+			flex-direction: column
+		input
+			padding: 6px 14px
+			font-family: $libreFranklin
+			border: 0
+			background-color: $white
+			color: $dark-brown-background
+			font-size: 20px
+			outline: none
+			@media $mobile
+				width: 100%
+    		
+		button
+			text-transform: uppercase
+			background-color: $yellow
+			font-size: 20px
+			border:0
+			color: $black
+			padding: 4px 17px
+			outline: none
+			cursor: pointer
+			&:hover 
+				background-color: lighten($yellow, 10%)
+			&:active
+				background-color: darken($yellow, 10%)	
+		    
+		    
+
+
+h1,h2,h3
+	font-family: $pacifico
+
+#main-input
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	background-color: $light-brown-background
+	padding: 60px 40px
+	@media $mobile
+		padding: 10px 20px
+
+h1
+	letter-spacing: 3px
+	font-size: 40px
+	margin: 0
+	@media $mobile
+		text-align: center
+	
+h2
+	letter-spacing: 3px
+	font-size: 30px
+	@media $mobile
+		text-align: center
+
+h3
+	font-weight: 100
+	letter-spacing: 3px
+	color: $yellow
+	text-align: center
+	@media $mobile
+		font-size: 14px
+
+.video-details
+	list-style: none
+	display: none
+	padding: 0
+	margin: 0
+	.detail
+		padding: 4px
+
+#selected-phoetry
+	display: flex
+	padding: 60px 40px
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	@media $mobile
+		padding: 20px 10px
+
+	.video-details
+		display: block
+		color: $yellow
+		margin: 20px 0
+		.detail
+			.mobile-label
+				color: $yellow
+
+			@media $mobile
+				display: inline-block
+				background-color: $yellow
+				padding: 4px
+				border-radius: 4px
+				a
+					display: none
+				.mobile-label
+					color: $dark-brown-background
+					display: inline-block	
+	.video-wrapper
+		width: 150px
+		height: 150px
+		border: 20px solid $yellow
+
+
+@keyframes pulse {
+  	0% {
+    	transform: scale(1)
+	}
+  	50% {
+  		transform: scale(1.4)
+  	}
+}
