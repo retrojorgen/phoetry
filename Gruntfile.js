@@ -36,6 +36,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['stylus', 'clean', 'copy']);
 
   // Moved to the tasks folder:
-  grunt.registerTask('dev', ['connect', 'watch']);
+  grunt.registerTask('dev', ['watch']);
 
 };

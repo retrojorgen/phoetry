@@ -17,8 +17,8 @@ module.exports = {
     }
   },
   stylus: {
-    files: ['source/stylus/**/*.styl'],
-    tasks: ['clean:css', 'stylus:dev'],
+    files: ['source/stylus/*.styl'],
+    tasks: ['stylus:dev'],
     options: {
       spawn: false
     }
